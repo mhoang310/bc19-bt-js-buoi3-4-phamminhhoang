@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bai tap JS buoi 3-4</title>
+	
+	<!-- BT 4 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+	<style>
+		.btn-outline {
+			color: #dc4f72;
+			border-color: #dc4f72;
+		}
+
+		.btn-outline:hover {
+			color: #fff;
+			background-color: #dc4f72;
+			border-color: #dc4f72;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1 style="text-align: center;">
+			Bài tập Javascript buổi 3-4
+		</h1>	
+	</header>		
+	
+    <div class="container">
+		<div class="row justify-content-around">
+			<!-- Bài 1: Tính lương nhân viên -->
+			<div class="col-5 mt-5">
+				<div class="card">
+					<div class="card-header text-center" style="background-color: #007bff; color: #fff;">
+						Bài 1: Tính lương nhân viên
+					</div>
+					<div class="card-body">
+						<!-- Work days -->
+						<div class="form-group">
+						  <label for="">Work days</label>
+						  <input type="text" class="form-control" id="soNgay">                  
+						</div>
+						<!-- Pay day -->
+						<div class="form-group">
+							<label for="">Pay day</label>
+							<select name="" class="form-control" id="luongNgay">
+								<option value="100000">100,000/day</option>                        
+							</select>
+						</div>                
+						<!-- Button submit -->
+						<div class="text-center">
+							<button id="luong" class="btn btn-primary">Employee salary</button>
+						</div>						
+						<!-- Display result -->
+						<div id="luongNV-wrapper" style="display: none; margin-top: 10px;" class="text-center">
+							<p>Total money</p>
+							<p id="luongNVEl"></p>                    
+						</div>
+				</div>
+				</div>				
+			</div>
+
+			<!-- Bài 2: Tính giá trị trung bình -->
+			<div class="col-5 mt-5">
+				<div class="card">
+					<div class="card-header text-center" style="background-color: #6c757d; color: #fff;">
+						Bài 2: Tính giá trị trung bình
+					</div>
+					<div class="card-body">
+						<!-- Num a1 -->
+						<div class="form-group">
+							<label for="">Num a1</label>
+							<input type="text" id="a1" class="form-control" >                  
+						</div>                
+						<!-- Num a2 -->
+						<div class="form-group">
+							<label for="">Num a2</label>
+							<input type="text" id="a2" class="form-control" >                  
+						</div>
+						<!-- Num a3 -->
+						<div class="form-group">
+							<label for="">Num a3</label>
+							<input type="text" id="a3" class="form-control" >                  
+						</div>
+						<!-- Num a4 -->
+						<div class="form-group">
+							<label for="">Num a4</label>
+							<input type="text" id="a4" class="form-control" >                  
+						</div>
+						<!-- Num a5 -->
+						<div class="form-group">
+							<label for="">Num a5</label>
+							<input type="text" id="a5" class="form-control" >                  
+						  </div>				
+						<!-- Button submit -->
+						<div class="text-center">
+							<button id="trungbinh" class="btn btn-secondary">Average</button>
+						</div>
+						<!-- Display result -->
+						<div id="gttb-wrapper" style="display: none; margin-top: 10px;" class="text-center">
+							<p>Average value</p>
+							<p id="gttbEl"></p>                    
+						</div>
+				</div>
+				</div>
+			</div>
+
+			<!-- Bài 3: Quy đổi tiền -->
+			<div class="col-5 mt-5">
+				<div class="card">
+					<div class="card-header text-center" style="background-color: #28a745; color: #fff;">
+						Bài 3: Quy đổi tiền
+					</div>
+					<div class="card-body">
+						<!-- USD -->
+						<div class="form-group">
+						  <label for="">USD</label>
+						  <input type="text" class="form-control" id="soUSD">                  
+						</div>
+						<!-- Exchange -->
+						<div class="form-group">
+							<label for="">Exchange</label>
+							<select name="" class="form-control" id="giaUSD">
+								<option value="23500">23,500</option>                        
+							</select>
+						</div>                
+						<!-- Button submit -->
+						<div class="text-center">
+							<button id="quyDoi" class="btn btn-success">Money</button>
+						</div>						
+						<!-- Display result -->
+						<div id="stqd-wrapper" style="display: none; margin-top: 10px;" class="text-center">
+							<p>Money</p>
+							<p id="stqdEl"></p>
+							<p>VNĐ</p>                    
+						</div>
+				</div>
+				</div>
+			</div>
+
+			<!-- Bài 4: Tính diện tích, chu vi hình chữ nhật -->
+			<div class="col-5 mt-5">
+				<div class="card">
+					<div class="card-header text-center" style="background-color: #17a2b8; color: #fff;">
+						Bài 4: Tính diện tích, chu vi hình chữ nhật
+					</div>
+					<div class="card-body">
+						<!-- Length -->
+						<div class="form-group">
+						  <label for="">Length</label>
+						  <input type="text" class="form-control" id="length">                  
+						</div>
+						<!-- Width -->
+						<div class="form-group">
+							<label for="">Width</label>
+							<input type="text" class="form-control" id="width">                  
+						</div>						                
+						<!-- Button submit -->
+						<div class="text-center">
+							<button id="result" class="btn btn-info">Result</button>
+						</div>						
+						<!-- Display result -->
+						<div id="result-wrapper" style="display: none; margin-top: 10px;" class="text-center">
+							<p>Acreage</p>
+							<p id="acreageEl"></p>
+							<p>Perimeter</p>
+							<p id="perimeterEl"></p>                    
+						</div>
+				</div>
+				</div>				
+			</div>
+
+			<!-- Bài 5: Tính tổng 2 ký số -->
+			<div class="col-5 mt-5">
+				<div class="card">
+					<div class="card-header text-center" style="background-color: #dc4f72; color: #fff;">
+						Bài 5: Tính tổng 2 ký số
+					</div>
+					<div class="card-body">
+						<!-- Number -->
+						<div class="form-group">
+						  <label for="">Number (Ex: 10, 11, ... -> 99)</label>
+						  <input type="text" class="form-control" id="soNguyen">                  
+						</div>												                
+						<!-- Button submit -->
+						<div class="text-center">
+							<button id="signature" class="btn btn-outline">Digital signature</button>
+						</div>						
+						<!-- Display result -->
+						<div id="signature-wrapper" style="display: none; margin-top: 10px;" class="text-center">
+							<p>Total</p>
+							<p id="tongCongEl"></p>
+							                    
+						</div>
+				</div>
+				</div>				
+			</div>
+			
+		</div>		
+    </div>
+    <br>
+    <br>	
+
+	<!-- MY JAVASCRIPT -->
+	<script type="text/javascript" src="./main.js"></script>
+</body>
+</html>
